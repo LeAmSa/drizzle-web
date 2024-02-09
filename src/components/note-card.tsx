@@ -16,7 +16,10 @@ export function NoteCard({ note }: NoteCardProps) {
         focus-visible:ring-2 focus-visible:ring-lime-400"
       >
         <span className="text-sm font-medium text-slate-300">
-          {note.date.toISOString()}
+          {formatDistanceToNow(note.date, {
+            locale: ptBR,
+            addSuffix: true,
+          })}
         </span>
 
         <p className="text-sm leading-6 text-slate-400">{note.content}</p>
